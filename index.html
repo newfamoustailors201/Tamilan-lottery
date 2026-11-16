@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10152b">
+  <title>Anna Play — Free Lottery Game Demo</title>
+  <meta name="description" content="Anna Play is a free-to-play number and color game demo using virtual points only. No real-money play or cash prizes.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>ANNA<span class="brand-light">PLAY</span><small>FREE GAME ZONE</small></span></a>
+    <nav>
+      <a class="nav-link active" href="#home" data-nav="home"><span>⌂</span> Home</a>
+      <a class="nav-link" href="#games" data-nav="games"><span>▦</span> Games</a>
+      <a class="nav-link" href="#results" data-nav="results"><span>◷</span> Results</a>
+      <a class="nav-link" href="#history" data-nav="history"><span>▤</span> My Activity</a>
+      <a class="nav-link" href="#account" data-nav="account"><span>◎</span> Account</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="safe-note"><span>✦</span><div><b>Play for fun</b><small>Virtual points only. No cash value.</small></div></div><button class="text-button" id="adminLink">Admin demo ↗</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+      <div><div class="eyebrow">WELCOME TO ANNA PLAY</div><h1 id="pageTitle">Game dashboard</h1></div>
+      <div class="top-actions"><div class="balance-card"><span class="coin">✦</span><div><small>DEMO POINTS</small><b id="balance">1,000</b></div></div><button class="avatar" id="accountAvatar">U</button></div>
+    </header>
+    <section id="home" class="page-section">
+      <div class="hero">
+        <div class="hero-copy"><span class="pill">✦ 100% FREE-TO-PLAY</span><h2>Pick a game.<br><em>Enjoy the moment.</em></h2><p>Explore quick number games and color challenges in a safe demo environment. Every point is virtual.</p><button class="primary-btn" onclick="document.querySelector('#games').scrollIntoView({behavior:'smooth'})">Explore games <span>→</span></button></div>
+        <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="number-ball ball-a">3</div><div class="number-ball ball-b">8</div><div class="number-ball ball-c">5</div><div class="spark">✦</div><div class="hero-caption">YOUR NEXT<br><b>FUN ROUND</b></div></div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><span class="stat-icon purple">▦</span><div><small>AVAILABLE GAMES</small><b>05</b></div><span class="stat-foot">Demo modes</span></div>
+        <div class="stat-card"><span class="stat-icon orange">✦</span><div><small>YOUR POINTS</small><b id="statPoints">1,000</b></div><span class="stat-foot">Virtual balance</span></div>
+        <div class="stat-card"><span class="stat-icon green">◷</span><div><small>ROUNDS PLAYED</small><b id="roundCount">0</b></div><span class="stat-foot">On this device</span></div>
+      </div>
+      <div class="section-heading" id="games"><div><span class="eyebrow">CHOOSE YOUR MODE</span><h2>Featured games</h2></div><span class="muted">Free demo • No cash prizes</span></div>
+      <div class="game-grid">
+        <article class="game-card game-purple"><div class="game-top"><span class="game-symbol">◉</span><span class="game-tag">QUICK PLAY</span></div><h3>Color Play</h3><p>Choose a color and try a quick virtual round.</p><div class="color-dots"><i class="red"></i><i class="green"></i><i class="violet"></i></div><button class="card-btn" data-game="color">Play demo <span>→</span></button></article>
+        <article class="game-card game-orange"><div class="game-top"><span class="game-symbol">⚄</span><span class="game-tag">LUCK & FUN</span></div><h3>Dice Roll</h3><p>Pick a number from one to six and roll.</p><div class="dice-preview">⚄</div><button class="card-btn" data-game="dice">Play demo <span>→</span></button></article>
+        <article class="game-card game-blue"><div class="game-top"><span class="game-symbol">123</span><span class="game-tag">NUMBER GAME</span></div><h3>3 Digit</h3><p>Choose a three-digit number for the demo draw.</p><div class="number-preview"><b>0</b><b>0</b><b>0</b></div><button class="card-btn" data-game="three">Play demo <span>→</span></button></article>
+        <article class="game-card game-pink"><div class="game-top"><span class="game-symbol">⑤</span><span class="game-tag">NUMBER GAME</span></div><h3>5 Digit</h3><p>Pick five digits and reveal a demo result.</p><div class="number-preview five"><b>0</b><b>0</b><b>0</b><b>0</b><b>0</b></div><button class="card-btn" data-game="five">Play demo <span>→</span></button></article>
+        <article class="game-card game-teal"><div class="game-top"><span class="game-symbol">♧</span><span class="game-tag">RESULT PRACTICE</span></div><h3>State Draw</h3><p>Explore a sample result board. No ticket sales.</p><div class="state-preview">STATE<br><b>DRAW</b></div><button class="card-btn" data-game="state">View demo <span>→</span></button></article>
+      </div>
+      <div class="notice"><span>ⓘ</span><p><b>Demo notice:</b> Anna Play is an entertainment prototype. Points are fictional, cannot be purchased, transferred or redeemed, and have no monetary value. No real lottery tickets, betting, deposits or withdrawals are offered.</p></div>
+    </section>
+    <section id="results" class="page-section hidden">
+      <div class="section-heading"><div><span class="eyebrow">ROUND ARCHIVE</span><h2>Recent demo results</h2></div><span class="live-badge"><i></i> DEMO DATA</span></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Game</th><th>Round ID</th><th>Result</th><th>Time</th><th>Status</th></tr></thead><tbody id="resultsTable"><tr><td colspan="5" class="empty">No demo rounds yet. Play a game to create your first result.</td></tr></tbody></table></div></div>
+    </section>
+    <section id="history" class="page-section hidden">
+      <div class="section-heading"><div><span class="eyebrow">YOUR ACTIVITY</span><h2>My activity</h2></div></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Game</th><th>Your pick</th><th>Demo result</th><th>Points used</th><th>Time</th></tr></thead><tbody id="historyTable"><tr><td colspan="5" class="empty">Your activity will appear here.</td></tr></tbody></table></div></div>
+    </section>
+    <section id="account" class="page-section hidden">
+      <div class="section-heading"><div><span class="eyebrow">PROFILE SETTINGS</span><h2>Your account</h2></div></div>
+      <div class="panel account-panel"><div class="profile-icon" id="profileIcon">U</div><div class="form-field"><label>Display name</label><input id="displayName" maxlength="30" placeholder="Enter your display name"></div><div class="form-field"><label>Demo points</label><input id="accountPoints" disabled value="1,000"></div><button class="primary-btn" id="saveProfile">Save profile</button><button class="outline-btn" id="resetDemo">Reset demo data</button><p class="muted small">This prototype stores demo data only in this browser. It does not create a secure online account.</p></div>
+    </section>
+    <footer>© 2026 Anna Play Demo <span>Built for entertainment • Virtual points only</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop hidden" id="gameModal"><div class="modal"><button class="modal-close" id="closeModal">×</button><span class="eyebrow" id="modalEyebrow">FREE DEMO ROUND</span><h2 id="modalTitle">Color Play</h2><p id="modalDescription" class="muted">Choose your option.</p><div id="gameControls"></div><div class="modal-bottom"><span>Entry: <b>10 virtual points</b></span><button class="primary-btn" id="playRound">Play demo round →</button></div><div id="roundMessage" class="round-message hidden"></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="assets/app.js"></script>
+</body></html>
